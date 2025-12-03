@@ -23,3 +23,21 @@ per ogni appello d'Esame a cui lo Studente ha partecipato, è necessario memoriz
 Pensiamo a quali entità (tabelle) creare per il nostro database e cerchiamo poi di stabilirne le relazioni.
 
 Infine, andiamo a definire le colonne e i tipi di dato di ogni tabella.
+
+## Entity
+
+departments
+degree_courses
+courses
+teachers
+student
+exam_session
+pivot (exam-session student many)
+pivot(courses teacher many)
+
+## Table_name: departments (entity_name:department)
+
+id: AUTO_INCREMENT PK BIGINT UNSIGNED
+name: VARCHAR (80)
+
+
