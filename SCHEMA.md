@@ -40,4 +40,50 @@ pivot(courses teacher many)
 id: AUTO_INCREMENT PK BIGINT UNSIGNED
 name: VARCHAR (80)
 
+## Table_name: degree_courses (entity_name:degree_course)
 
+id: AUTO_INCREMENT PK BIGINT UNSIGNED
+department_id: BIGINT UNSIGNED FK
+name: VARCHAR(80)
+
+## Table_name: courses (entity_name:course)
+
+id: AUTO_INCREMENT PK BIGINT UNSIGNED
+identify_code:
+name: VARCHAR(80)
+year: CHAR(7)  example(2025-26)
+
+## Table_name: teachers (entity_name:teacher)
+
+id: AUTO_INCREMENT PK BIGINT UNSIGNED
+name: VARCHAR(30)
+last_name: VARCHAR(30)
+identify_code: CHAR(6)
+email: VARCHAR(40)
+phone: VARCHAR(13)
+
+## Table_name: students (entity_name:student)
+
+id: AUTO_INCREMENT PK BIGINT UNSIGNED
+name: VARCHAR(30)
+last_name: VARCHAR(30)
+identify_code: CHAR(6)
+email: VARCHAR(40)
+phone: VARCHAR(13)
+
+## Table_name: exam_sessions (entity_name:exam_session)
+
+id: AUTO_INCREMENT PK BIGINT UNSIGNED
+exam_date: DATETIME(Date.now())
+room: VARCHAR (20)
+
+## Pivot-table:exam_session_students
+
+exam_session_id: FK BIGINT UNSIGNED
+student_id: FK BIGINT UNSIGNED
+vote: TINYINT 
+
+## Pivot-table:courses many_teachers
+
+courses_id: FK BIGINT UNSIGNED
+teachers_id: FK BIGINT UNSIGNED 
