@@ -11,3 +11,10 @@ DESCRIBE teachers;
 SELECT COUNT(*) as `countTeachers_for_office`, `office_address`
 FROM teachers
 GROUP BY `office_address`
+
+# Calcolare la media dei voti di ogni appello d'esame
+
+DESCRIBE exam_student;
+SELECT CEIL(AVG(vote)) as `vote_avg`, exam_id 
+FROM exam_student
+GROUP BY exam_id
