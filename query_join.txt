@@ -29,3 +29,11 @@ FROM students
 JOIN degrees ON degrees.id = students.degree_id
 JOIN departments ON departments.id = degrees.department_id
 ORDER BY students.surname ASC, students.name ASC
+
+# # 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
+
+SELECT degrees.department_id, degrees.name AS `degreeName`, degrees.address, courses.name AS `courseName`, teachers.name AS `teacherName`, teachers.surname AS `teacherSurname`
+FROM degrees 
+JOIN courses ON courses.degree_id = degrees.id
+JOIN course_teacher ON course_teacher.course_id = courses.id
+JOIN teachers ON course_teacher.teacher_id= teachers.id 
