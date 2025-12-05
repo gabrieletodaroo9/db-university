@@ -1,0 +1,6 @@
+# 1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
+
+SELECT students.id AS `studentId`, students.name, students.surname, students.fiscal_code, students.registration_number, degrees.name AS `degreeName`
+FROM students 
+JOIN degrees ON degrees.id = students.degree_id
+WHERE degrees.name = "Corso di Laurea in Economia"
